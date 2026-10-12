@@ -125,12 +125,7 @@ public class LinkedMap<K, V> implements Map<K, V> {
 
   @Override
   public Iterable<Map.Entry<K, V>> entries() {
-    return new Iterable<Map.Entry<K, V>>() {
-      @Override
-      public Iterator<Map.Entry<K, V>> iterator() {
-        return new EntryIterator();
-      }
-    };
+    return new Entries();
   }
 
   // Walks the node chain from head, returning each node's key.
@@ -150,6 +145,14 @@ public class LinkedMap<K, V> implements Map<K, V> {
       K key = current.key;
       current = current.next;
       return key;
+    }
+  }
+
+  // The Iterable that entries() returns. Each call to iterator() starts a new traversal.
+  private class Entries implements Iterable<Map.Entry<K, V>> {
+    @Override
+    public Iterator<Map.Entry<K, V>> iterator() {
+      return new EntryIterator();
     }
   }
 
