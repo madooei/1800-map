@@ -26,111 +26,62 @@ public class LinkedMap<K, V> implements Map<K, V> {
 
     @Override
     public K key() {
-      return key;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
 
     @Override
     public V value() {
-      return value;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
   }
 
   public LinkedMap() {
-    head = null;  // the map starts empty
-    size = 0;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public V get(K key) {
-    if (key == null) {
-      throw new IllegalArgumentException();
-    }
-    Node<K, V> curr = head;
-    while (curr != null) {
-      if (key.equals(curr.key)) {
-        return curr.value;
-      }
-      curr = curr.next;
-    }
-    return null;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean containsKey(K key) {
-    if (key == null) {
-      throw new IllegalArgumentException();
-    }
-    Node<K, V> curr = head;
-    while (curr != null) {
-      if (key.equals(curr.key)) {
-        return true;
-      }
-      curr = curr.next;
-    }
-    return false;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean put(K key, V value) {
-    if (key == null || value == null) {
-      throw new IllegalArgumentException();
-    }
-    Node<K, V> curr = head;
-    while (curr != null) {
-      if (key.equals(curr.key)) {
-        curr.value = value;  // key present; replace its value
-        return false;
-      }
-      curr = curr.next;
-    }
-    Node<K, V> newNode = new Node<>(key, value);
-    newNode.next = head;  // insert at the head
-    head = newNode;
-    size++;
-    return true;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean remove(K key) {
-    if (key == null) {
-      throw new IllegalArgumentException();
-    }
-    Node<K, V> prev = null;
-    Node<K, V> curr = head;
-    while (curr != null) {
-      if (key.equals(curr.key)) {
-        if (prev != null) {
-          prev.next = curr.next;
-        } else {
-          head = head.next;
-        }
-        size--;
-        return true;
-      }
-      prev = curr;
-      curr = curr.next;
-    }
-    return false;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public int size() {
-    return size;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public Iterator<K> iterator() {
-    return new KeyIterator();
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public Iterable<Map.Entry<K, V>> entries() {
-    return new Iterable<Map.Entry<K, V>>() {
-      @Override
-      public Iterator<Map.Entry<K, V>> iterator() {
-        return new EntryIterator();
-      }
-    };
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Walks the node chain from head, returning each node's key.
@@ -139,17 +90,14 @@ public class LinkedMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean hasNext() {
-      return current != null;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
 
     @Override
     public K next() {
-      if (!hasNext()) {
-        throw new NoSuchElementException();
-      }
-      K key = current.key;
-      current = current.next;
-      return key;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
   }
 
@@ -159,17 +107,14 @@ public class LinkedMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean hasNext() {
-      return current != null;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
 
     @Override
     public Map.Entry<K, V> next() {
-      if (!hasNext()) {
-        throw new NoSuchElementException();
-      }
-      Node<K, V> node = current;
-      current = current.next;
-      return node;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
   }
 }

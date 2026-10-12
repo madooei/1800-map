@@ -25,103 +25,70 @@ public class ArrayMap<K, V> implements Map<K, V> {
 
     @Override
     public K key() {
-      return key;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
 
     @Override
     public V value() {
-      return value;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
   }
 
   // arr only ever holds Entry<K, V>, so the cast is safe.
   @SuppressWarnings("unchecked")
   public ArrayMap() {
-    arr = (Entry<K, V>[]) new Entry[10];  // start with room for 10 pairs
-    size = 0;                             // the map starts empty
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public V get(K key) {
-    if (key == null) {
-      throw new IllegalArgumentException();
-    }
-    int i = indexOf(key);
-    if (i == -1) {
-      return null;  // key not present
-    }
-    return arr[i].value;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean containsKey(K key) {
-    if (key == null) {
-      throw new IllegalArgumentException();
-    }
-    return indexOf(key) != -1;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean put(K key, V value) {
-    if (key == null || value == null) {
-      throw new IllegalArgumentException();
-    }
-    int i = indexOf(key);
-    if (i != -1) {
-      arr[i].value = value;  // key present; replace its value
-      return false;
-    }
-    if (size == arr.length) {
-      grow();                // grow when the array is full
-    }
-    arr[size] = new Entry<>(key, value);  // append at the end
-    size++;
-    return true;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public boolean remove(K key) {
-    if (key == null) {
-      throw new IllegalArgumentException();
-    }
-    int i = indexOf(key);
-    if (i == -1) {
-      return false;          // not present; nothing changed
-    }
-    arr[i] = arr[size - 1];  // move the last entry into the gap
-    arr[size - 1] = null;    // clear the vacated slot
-    size--;
-    return true;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public int size() {
-    return size;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public Iterator<K> iterator() {
-    return new KeyIterator();
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   @Override
   public Iterable<Map.Entry<K, V>> entries() {
-    return new Iterable<Map.Entry<K, V>>() {
-      @Override
-      public Iterator<Map.Entry<K, V>> iterator() {
-        return new EntryIterator();
-      }
-    };
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Returns the index of the entry holding key, or -1 if key is not found.
   private int indexOf(K key) {
-    for (int i = 0; i < size; i++) {
-      if (arr[i].key.equals(key)) {
-        return i;
-      }
-    }
-    return -1;
+    // TODO: Implement me
+    throw new UnsupportedOperationException("TODO: Implement me");
   }
 
   // Doubles the capacity. Same cast rationale as the constructor.
@@ -140,15 +107,14 @@ public class ArrayMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean hasNext() {
-      return cursor < size;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
 
     @Override
     public K next() {
-      if (!hasNext()) {
-        throw new NoSuchElementException();
-      }
-      return arr[cursor++].key;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
   }
 
@@ -158,15 +124,14 @@ public class ArrayMap<K, V> implements Map<K, V> {
 
     @Override
     public boolean hasNext() {
-      return cursor < size;
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
 
     @Override
     public Map.Entry<K, V> next() {
-      if (!hasNext()) {
-        throw new NoSuchElementException();
-      }
-      return arr[cursor++];
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
     }
   }
 }
