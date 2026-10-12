@@ -2,7 +2,6 @@ package map;
 
 import java.util.ArrayList;
 import java.util.Collections;
-import java.util.HashMap;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
@@ -473,15 +472,12 @@ public abstract class MapTest {
     map.put("a", 1);
     map.put("b", 2);
     map.put("c", 3);
-    HashMap<String, Integer> seen = new HashMap<>();
+    List<String> seen = new ArrayList<>();
     for (Map.Entry<String, Integer> entry : map.entries()) {
-      seen.put(entry.key(), entry.value());
+      seen.add(entry.key() + "=" + entry.value());
     }
-    HashMap<String, Integer> expected = new HashMap<>();
-    expected.put("a", 1);
-    expected.put("b", 2);
-    expected.put("c", 3);
-    assertEquals(expected, seen);
+    Collections.sort(seen);
+    assertEquals(threePairs(), seen);
   }
 
   @Test
@@ -587,5 +583,14 @@ public abstract class MapTest {
     keys.add("b");
     keys.add("c");
     return keys;
+  }
+
+  // The pairs a=1, b=2, c=3, in ascending order of key.
+  private List<String> threePairs() {
+    List<String> pairs = new ArrayList<>();
+    pairs.add("a=1");
+    pairs.add("b=2");
+    pairs.add("c=3");
+    return pairs;
   }
 }

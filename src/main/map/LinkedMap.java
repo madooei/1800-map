@@ -101,6 +101,15 @@ public class LinkedMap<K, V> implements Map<K, V> {
     }
   }
 
+  // The Iterable that entries() returns. Each call to iterator() starts a new traversal.
+  private class Entries implements Iterable<Map.Entry<K, V>> {
+    @Override
+    public Iterator<Map.Entry<K, V>> iterator() {
+      // TODO: Implement me
+      throw new UnsupportedOperationException("TODO: Implement me");
+    }
+  }
+
   // Walks the node chain from head, returning each node as a read-only entry.
   private class EntryIterator implements Iterator<Map.Entry<K, V>> {
     private Node<K, V> current = head;  // node that comes next
