@@ -40,7 +40,7 @@ code/
 - `scripts/test.sh map.ArrayMapTest` — compiles everything and runs only that test class. Use this while you are working on one class and the other is still empty.
 - `scripts/run.sh demo.LinkedMapDemo` — compiles everything and runs that one demo. Every class you implement has its own demo, `<Class>Demo`.
 
-## What's here
+## Contents
 
 - `map.Map<K, V>` — the Map contract: `put`, `get`, `remove`, `containsKey`, and `size`. It extends `Iterable<K>`, so every map also has `iterator()`, which visits the keys. Its `entries()` method returns an `Iterable<Map.Entry<K, V>>` that visits the key-value pairs. `Map.Entry<K, V>` is a read-only view of one pair, with `key()` and `value()`.
 - `map.LinkedMap<K, V>` — the node-backed implementation. Each node holds a key and a value, and it is also the `Map.Entry` that `entries()` hands back.
